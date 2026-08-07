@@ -30,8 +30,10 @@ app.add_middleware(
 # Load Saved Model
 # ==========================================
 
-model_path = os.path.join("saved_model", "model.pkl")
-vectorizer_path = os.path.join("saved_model", "vectorizer.pkl")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+model_path = os.path.join(BASE_DIR, "saved_model", "model.pkl")
+vectorizer_path = os.path.join(BASE_DIR, "saved_model", "vectorizer.pkl")
 
 model = joblib.load(model_path)
 vectorizer = joblib.load(vectorizer_path)
