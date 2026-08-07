@@ -34,7 +34,7 @@ function App() {
             const start = performance.now();
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/predict",
+                https://sentence-classifier-api.onrender.com/predict,
                 {
                     text: text
                 }
