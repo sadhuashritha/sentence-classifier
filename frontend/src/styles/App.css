@@ -1,0 +1,219 @@
+/* ===========================
+   GLOBAL APP
+=========================== */
+
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e3a8a,
+    #312e81,
+    #4f46e5,
+    #0f172a
+  );
+
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===========================
+   Animated Background Circles
+=========================== */
+
+.app::before,
+.app::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+}
+
+.app::before {
+  width: 320px;
+  height: 320px;
+  background: #3b82f6;
+  top: -100px;
+  left: -80px;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.app::after {
+  width: 420px;
+  height: 420px;
+  background: #8b5cf6;
+  bottom: -150px;
+  right: -120px;
+  animation: float2 15s ease-in-out infinite;
+}
+
+/* ===========================
+   Glass Card
+=========================== */
+
+.glass-card {
+
+  width: 100%;
+  max-width: 950px;
+
+  padding: 50px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  box-shadow:
+      0 30px 80px rgba(0,0,0,.45);
+
+  position: relative;
+
+  z-index: 10;
+
+}
+
+/* ===========================
+   Smooth Entrance
+=========================== */
+
+.glass-card{
+
+animation: cardFade .8s ease;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6366f1;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes gradientAnimation{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+@keyframes float1{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(35px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes float2{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-40px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes cardFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+.glass-card{
+
+padding:25px;
+
+}
+
+}
