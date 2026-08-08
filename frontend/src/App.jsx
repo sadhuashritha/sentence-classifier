@@ -34,10 +34,10 @@ function App() {
             const start = performance.now();
 
             const response = await axios.post(
-                "https://sentence-classifier-api.onrender.com/predict",
+                "https://sentence-classifier-4tkg.onrender.com/predict",
                 {
-                    text: text
-                }
+                text: text
+            }
             );
 
             // End timer
